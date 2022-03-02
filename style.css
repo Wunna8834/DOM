@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+.container h1{
+    font-size: 2rem;
+    color: #b6aa05;
+    text-align: center;
+}
+
+#searchBar {
+   width: 20%;
+}
+#buttons{
+    margin-top: 1rem;
+}
+.button-value{
+    border: 2px solid #6759ff;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    color: #6759ff;
+    cursor: pointer;
+}
+.active {
+    background-color: #38c00e;
+    color: #fff;
+}
+#childrenList{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card {
+    width: 20vw;
+    height: 50vh;
+    background-color: rgb(129, 60, 60);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.card img{
+    width: 250px;
+    height: 250px;
+    margin-left: 1rem;
+}
+
+.card .name{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card .age{
+    color: rgb(138, 136, 136);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card .gender{
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}
