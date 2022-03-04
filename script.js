@@ -92,11 +92,12 @@ kids = children.map(child => {
     image.src = child.image;
     name.textContent = child.name;
     age.textContent = "Age: " + child.age;
-    gender.textContent = "Gender: " + child.gender;
+    gender.textContent = child.gender;
     childrenCardContainer.append(card);
-    return { name: child.name, age: child.age, gender: child.gender, element: card}
+    return { name: child.name, age: child.age, gender: child.gender, element: card, id: child.gender}
+    
 });
-
+console.log(kids);
 //activate the buttons
 function filteredGender(value){
     let buttons = document.querySelectorAll(".button-value");
@@ -106,23 +107,29 @@ function filteredGender(value){
         }else{
             button.classList.remove("active");
         }
-        // console.log(value);
+        console.log(value);
     });
-    // Display Male or Female upon button
+    //Display Male or Female upon button
     let elements = document.querySelectorAll(".card");
-
+    const maleOnly = kids.filter(kid => kid.gender === 'Male');
+    const femaleOnly = kids.filter(kid => kid.gender === 'Female');
+    console.log(maleOnly);
+    console.log(femaleOnly);
     elements.forEach(element => {
-        if(value = 'all'){
+        console.log(element);
+        let genders = document.querySelectorAll(".gender");
+        if(value == 'all'){
             element.classList.remove("hide");
         }else{
-            if(value.includes(kids.gender.toLowerCase())){
+            if(value == element.lastElementChild.innerText.toLowerCase()){
                 element.classList.remove("hide");
             }else{
                 element.classList.add("hide");
             }
         }
+        
     });
-};
+}
 //initially display all button
 window.onload = () => {
     filteredGender('all');
